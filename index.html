@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Grafland : -">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Grafland</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/cmgraff/grafland">View on GitHub</a>
+
+          <h1 id="project_title">Grafland</h1>
+          <h2 id="project_tagline">-</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/cmgraff/grafland/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/cmgraff/grafland/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <pre><code>Grafland is a collection of unique userland tools and 
+toolchains written natively in C, POSIX sh and makefile.
+</code></pre>
+
+<h2>
+<a id="building" class="anchor" href="#building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BUILDING:</h2>
+
+<pre><code>make
+make install DESTDIR=$(pwd)/myroot
+
+    Install a single component of grafland: 
+
+        cd grafland/cbin
+        make
+        make install DESTDIR=/path/to/target
+</code></pre>
+
+<h2>
+<a id="cross-building" class="anchor" href="#cross-building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CROSS BUILDING:</h2>
+
+<pre><code>The cross toolchain build system located inside of
+toolchain/ can be used to create a cross toolchain
+and then cross build the rest of the OS:
+
+    make toolchain
+
+    export `make buildenvars`
+
+    make
+
+    make install DESTDIR=$(pwd)/myroot
+
+
+For finer grained control over the cross toolchain
+(such as changing architectures or using the tool-
+chain to build other OS)) you'll want to change
+directories to toolchain/, view the documentation
+within toolchain/README and run the build system
+from there.
+
+
+Each subdirectory has a README which documents its usage.
+</code></pre>
+
+<h2>
+<a id="hier" class="anchor" href="#hier" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HIER:</h2>
+
+<pre><code>cbin/
+    Userland applications written in C (native)
+clib/
+    Standard C library components and helper libraries, (native)
+
+    Gshline. An editline/readline like implementation. This
+    library is used to supply line editing and history to
+    the graff shell (Gsh) and grafland irc client. The latter
+    is supplied with a unique ircline() funtion (native).
+
+cmath/
+    Trancendental mathematics functions written in C (native).
+docs/
+    Whitepages I have written to document various OS and books 
+    (native).
+editor/
+    A native editor.
+wm/
+    A rewrite of dwm.
+Gsh/
+    A native shell.
+irc/
+    A native irc client and library.
+README
+    This README.
+shbin/
+    Userland applications and libraries written in POSIX shell 
+    (native).
+toolchain/
+    The omnicross toolchain (native)
+        -Link grafland components up into the toolchain
+         for compilation and installation.
+        -Build and maintain outside software.
+
+ottercross/
+    The ottercross PoC toolchain (native)
+        -This toolchain has surpassed the quality of the origi-
+         nal omnicross toolchain/ and focuses on security with 
+         gpg checking. It does not yet support the target pack-
+         ages of the omnicross toolchain.
+</code></pre>
+
+<h2>
+<a id="portability" class="anchor" href="#portability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PORTABILITY:</h2>
+
+<pre><code>To some extent all of the components of grafland are standalone. 
+The core functionality (excluding the toolchain) depends on only 
+the standard C library and a few POSIX extensions to it. This 
+being the case it should work fine on linux, mac, NetBSD and 
+FreeBSD.
+</code></pre>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CONTACT:</h2>
+
+<pre><code>CM Graff cm0graff@gmail.com
+</code></pre>
+
+<p>RELEASES: </p>
+
+<p><a href="http://www.csit.parkland.edu/%7Ecgraff1/grafland-0.2d.tar.gz">http://www.csit.parkland.edu/~cgraff1/grafland-0.2d.tar.gz</a></p>
+
+<p><a href="http://www.csit.parkland.edu/%7Ecgraff1/grafland-0.2e.tar.gz">http://www.csit.parkland.edu/~cgraff1/grafland-0.2e.tar.gz</a></p>
+
+<p><a href="http://www.csit.parkland.edu/%7Ecgraff1/grafland-0.2f.tar.gz">http://www.csit.parkland.edu/~cgraff1/grafland-0.2f.tar.gz</a></p>
+
+<p><a href="http://www.csit.parkland.edu/%7Ecgraff1/grafland-0.2g.tar.gz">http://www.csit.parkland.edu/~cgraff1/grafland-0.2g.tar.gz</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Grafland maintained by <a href="https://github.com/cmgraff">cmgraff</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
