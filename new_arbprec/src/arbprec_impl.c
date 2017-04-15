@@ -17,6 +17,16 @@ size_t arraylen(int *array, int delim)
 	return len;
 }
 
+int *bigflt_alloc(void)
+{
+	return malloc(1000 * sizeof (int));
+}
+
+void bigflt_free(int *bf)
+{
+	free(bf);
+}
+
 void copyarray(int *answer, int *from, size_t len)
 {
 	size_t i = 0;
@@ -94,6 +104,7 @@ int *str2ints(char *a, int *b)
 	size_t i;
 	for( i = 0 ;a[i] != '\0' ; i++)
 		b[i] = a[i] - '0';
+	b[i] = 4242;
 	return b;
 }
 
