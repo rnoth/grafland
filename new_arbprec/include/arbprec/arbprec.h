@@ -13,6 +13,8 @@
 int *addition(int *, int *, int *);		/* Add two arrays */
 void *arbprec_malloc(size_t);			/* Memory allocater with error */
 size_t arraylen(int *, int);			/* Similiar to strlen except it searches for the specified token */
+int *bigflt_alloc(void);			/* alloc a bigflt */
+void bigflt_free(int *);			/* free a bigflt */
 void copyarray(int *, int *, size_t);		/* Copy an array of ints to another array of ints */ 
 void die(char *);				/* Kill and error message */
 int iszero(int *);				/* Returns true if an entire array is zero */ 
