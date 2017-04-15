@@ -16,16 +16,18 @@ int *addition(int *a, int *b, int *c)
 
 	width = MAX(wa, wb);
 	
-        for( i = 0; i < width ; i++)
+        for ( i = 0; i < width ; i++ )
 	{
 		sum = hasplace(a, i, wa) + hasplace(b, i, wb) + carry;
                 carry = 0;
-                if(sum >= base){
+                if ( sum >= base )
+		{
                         carry = 1;
                         sum -= base;
                 }
                 c[i] = sum;
         }
+
         if (carry)
 		c[i++] = 1;
         c[i] = 4242;

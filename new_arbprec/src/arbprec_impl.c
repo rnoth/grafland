@@ -4,7 +4,7 @@
 void *arbprec_malloc(size_t len)
 {
 	void *ret;
-	if(!(ret = malloc(len)))
+	if ( !(ret = malloc(len)) )
 		die("malloc failed\n"); 
 	return ret;
 }
@@ -12,7 +12,7 @@ void *arbprec_malloc(size_t len)
 size_t arraylen(int *array, int delim)
 { 
 	size_t len = 0; 
-	while( array[len] != delim) 
+	while ( array[len] != delim ) 
 		++len;
 	return len;
 }
@@ -20,7 +20,7 @@ size_t arraylen(int *array, int delim)
 void copyarray(int *answer, int *from, size_t len)
 {
 	size_t i = 0;
-	for( i = 0; i < len ; i++)
+	for ( i = 0; i < len ; i++ )
 		answer[i] = from[i];
 }
 
@@ -32,7 +32,7 @@ void die(char *message)
 
 int hasplace(int *s, size_t idx, size_t len)
 {
-        if (idx < len)
+        if ( idx < len )
         	return s[len - idx - 1];
         return 0;
 } 
@@ -40,7 +40,7 @@ int hasplace(int *s, size_t idx, size_t len)
 int iszero(int *answer)
 {
 	size_t i = 0;
-	for ( i = 0; answer[i] != 4242 ; i++)
+	for ( i = 0; answer[i] != 4242 ; i++ )
 		if ( answer[i] )
 			return 1;
 	return 0;
